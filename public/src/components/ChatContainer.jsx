@@ -7,9 +7,9 @@ import axios from "axios";
 import { sendMessageRoute, recieveMessageRoute } from "../utils/APIRoutes";
 
 export default function ChatContainer({ currentChat, socket }) {
-  const [messages, setMessages] = useState([]);
-  const scrollRef = useRef();
-  const [arrivalMessage, setArrivalMessage] = useState(null);
+  const [messages, setMessages] = useState([]); // liste des message entre l'utilisateur courant et le chat courant
+  const scrollRef = useRef(); // gestion du scroll
+  const [arrivalMessage, setArrivalMessage] = useState(null); // Pour les messages
 
   useEffect(async () => {
     const data = await JSON.parse(
